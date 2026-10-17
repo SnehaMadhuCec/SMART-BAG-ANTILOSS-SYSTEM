@@ -46,12 +46,13 @@ An IoT-based security system designed to prevent luggage or bags from being lost
 During the development of this project, hardware constraints were identified and resolved to ensure reliable operation:
 
 * **GSM SIM Compatibility & Network Registration:** The SIM900A module relies on 2G network bands. A primary challenge was ensuring the inserted SIM card supported 2G fallback and had an active outgoing SMS tariff plan. Additionally, the module requires a specific initialization period to search for and register to a local cell tower.
-  **Solution:** Verified network compatibility and programmed a dedicated delay sequence during the system bootup, allowing the GSM module adequate time to lock onto the network before attempting to send alerts.
+
+   **Solution:** Verified network compatibility and programmed a dedicated delay sequence during the system bootup, allowing the GSM module adequate time to lock onto the network before attempting to send alerts.
 * **GPS Indoor Limitations (Demo Mode):** Standard NEO-6M GPS modules require a clear line-of-sight to the sky to lock onto satellite signals. Because presentations typically occur indoors, the module cannot receive live coordinates.
+
    **Solution:** A specific "Demo Mode" is coded into the presentation version of the software to bypass the satellite check and transmit a hardcoded Google Maps link, ensuring the Wi-Fi separation logic and SMS transmission can be reliably demonstrated in a classroom setting.
 
-  ## Future Scope & Upgrades
-
+## Future Scope & Upgrades
 While the current prototype successfully demonstrates the core anti-loss logic, future iterations of this project can be enhanced with the following upgrades:
 
 * **Migration to 4G LTE:** The current system uses the SIM900A, which relies on legacy 2G networks. Upgrading to a 4G LTE module (such as the SIM7600 or A7670) will ensure long-term network compatibility, broader SIM card support (like Jio), and faster data transmission.
